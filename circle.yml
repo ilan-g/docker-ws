@@ -1,4 +1,4 @@
 test:
   override:
-    - mvn verify
+    - mvn integration-test
     
