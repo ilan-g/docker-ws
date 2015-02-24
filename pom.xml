@@ -11,6 +11,9 @@
     <name>Employee Services</name>
     <description>Employee Services</description>
     <url></url>
+    
+    <!-- Output to jar format -->
+	<packaging>jar</packaging>
 
     <properties>
         <main.basedir>${basedir}/../..</main.basedir>
