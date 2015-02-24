@@ -1,7 +1,7 @@
 general:  
   artifacts:
-    - code/client/build/karma-coverage
-
+    - /home/ubuntu/docker-ws/target/
+    
 test:
   override:
     - mvn integration-test
