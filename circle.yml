@@ -1,3 +1,7 @@
+general:  
+  artifacts:
+    - code/client/build/karma-coverage
+
 test:
   override:
     - mvn integration-test
