@@ -31,6 +31,10 @@ public class EmployeeService {
 
     private String DEFUALT_NAME = "...No entries";
 
+    /**
+     * 
+     * @return
+     */
     public String getEmployeeList() {
         Iterator<Employee> names = employeeRepository.findAll().iterator();
         String name = DEFUALT_NAME;

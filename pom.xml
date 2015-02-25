@@ -49,6 +49,7 @@
 		</dependency>
 
     </dependencies>
+    <!-- added one comment -->
     <build>
         <plugins>
         	<plugin>
