@@ -9,5 +9,6 @@ test:
 deployment:
   branch: master
   commands:
-    s3_location:
-      bucket: span-cloud-coe-ilan
+    - /bin/bash publish.sh
+#    s3_location:
+#      bucket: span-cloud-coe-ilan
