@@ -8,9 +8,9 @@ test:
 
 ## Customize deployment commands
 deployment:
-  aws:
-  branch: master
-  commands:
-    - /bin/bash publish.sh
+#  aws:
+#  branch: master
+#  commands:
+#    - /bin/bash publish.sh
 #    s3_location:
 #      bucket: span-cloud-coe-ilan
