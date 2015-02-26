@@ -7,8 +7,5 @@ test:
     - mvn integration-test
 
 deployment:
-	s3_location:
-		bucket: span-cloud-coe-ilan
-	
-	
-    
+  s3_location:
+    bucket: span-cloud-coe-ilan
