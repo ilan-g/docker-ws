@@ -5,4 +5,10 @@ general:
 test:
   override:
     - mvn integration-test
+
+deployment:
+	s3_location:
+		bucket: span-cloud-coe-ilan
+	
+	
     
