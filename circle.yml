@@ -2,10 +2,11 @@ general:
   artifacts:
     - /home/ubuntu/docker-ws/target/
     
-test:
-  override:
-    - mvn integration-test
+#test:
+ # override:
+ #    - mvn integration-test
 
+## Customize deployment commands
 deployment:
   aws:
   branch: master
