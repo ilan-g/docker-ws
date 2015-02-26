@@ -7,6 +7,7 @@ test:
     - mvn integration-test
 
 deployment:
+  branch: master
   commands:
     s3_location:
       bucket: span-cloud-coe-ilan
