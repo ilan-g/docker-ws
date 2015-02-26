@@ -10,7 +10,7 @@ test:
 deployment:
 #  aws:
 #  branch: master
-#  commands:
+  commands:
 #    - /bin/bash publish.sh
 #    s3_location:
 #      bucket: span-cloud-coe-ilan
