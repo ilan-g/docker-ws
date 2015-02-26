@@ -1,6 +1,6 @@
-general:  
-  artifacts:
-    - /home/ubuntu/docker-ws/target/
+#general:  
+#  artifacts:
+#    - /home/ubuntu/docker-ws/target/
     
 #test:
  # override:
