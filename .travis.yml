@@ -3,8 +3,8 @@ language: java
 
 deploy:
   provider: s3
-  access_key_id: "AKIAIAH66WIUJXDQTVEA"
-  secret_access_key: "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"
+  access_key_id: ""
+  secret_access_key: ""
   bucket: "S3 Bucket"
   skip_cleanup: true
   local_dir: target\maven-archiver
