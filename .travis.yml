@@ -7,4 +7,4 @@ deploy:
   secret_access_key: "V1J4HVeoG1bAQqEz6nHhRzAVICjYyjp9i7BK9AZZ"
   bucket: "S3 Bucket"
   skip_cleanup: true
-  local_dir: build
+  local_dir: target\maven-archiver
