@@ -16,8 +16,12 @@
 
 package com.span.service;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.span.EmployeeApplication;
 import com.span.domain.Employee;
 
 import java.util.Iterator;
@@ -28,8 +32,10 @@ public class EmployeeService {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+    
+    private static Log logger = LogFactory.getLog(EmployeeApplication.class);
 
-    private String DEFUALT_NAME = "...No entries";
+    private String DEFUALT_NAME = "...No entries...so far..";
 
     /**
      * Added new comments. add new comments. 
@@ -37,6 +43,7 @@ public class EmployeeService {
      */
     public String getEmployeeList() {
         Iterator<Employee> names = employeeRepository.findAll().iterator();
+        logger.info("getting inside employe list");
         String name = DEFUALT_NAME;
         while(names.hasNext()){
             name = names.next().getName();
