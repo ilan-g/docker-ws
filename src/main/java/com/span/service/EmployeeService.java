@@ -35,7 +35,7 @@ public class EmployeeService {
     
     private static Log logger = LogFactory.getLog(EmployeeApplication.class);
 
-    private String DEFUALT_NAME = "...No entries...so far..";
+    private String DEFUALT_NAME = "...No entries...so far..## ##";
 
     /**
      * Added new comments. add new comments. 
