@@ -35,7 +35,7 @@ public class EmployeeService {
     
     private static Log logger = LogFactory.getLog(EmployeeApplication.class);
 
-    private String DEFUALT_NAME = "123 Nooo entries..456";
+    private String DEFUALT_NAME = "12345 Nooo entries..123456";
 
     /**
      * Added new comments. add new comments. 
@@ -43,7 +43,7 @@ public class EmployeeService {
      */
     public String getEmployeeList() {
         Iterator<Employee> names = employeeRepository.findAll().iterator();
-        logger.info("getting inside employe list---123");
+        logger.info("12345---getting inside employe list---123456");
         String name = DEFUALT_NAME;
         while(names.hasNext()){
             name = names.next().getName();
