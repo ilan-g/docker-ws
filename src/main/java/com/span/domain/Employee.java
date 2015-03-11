@@ -22,6 +22,10 @@ public class Employee {
     
     @Column(nullable = false)
     private int age;    
+    
+    @Column(nullable = false)
+    private String employeeNumber;    
+    
 
 	public Long getId() {
         return id;
@@ -46,4 +50,14 @@ public class Employee {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+	public String getEmployeeNumber() {
+		return employeeNumber;
+	}
+
+	public void setEmployeeNumber(String employeeNumber) {
+		this.employeeNumber = employeeNumber;
+	}
+	
+	
 }

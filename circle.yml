@@ -2,6 +2,7 @@ machine:
   services:
     - docker
 
+#This is use to store the artifacts
 general:  
   artifacts:
     - /home/ubuntu/docker-ws/target/
@@ -9,7 +10,6 @@ general:
 dependencies:
   override:
     - docker info
-#   - docker build -t ilang/coe .
     - docker build --rm --tag=ilang/coe:wsv1 .
 
     
@@ -17,14 +17,30 @@ test:
   override:
      - mvn integration-test
 
+#Please note, use it have set this $DOCKER_EMAIL and other variables in Environment screen already
+#deployment:
+#  production: # just a label; label names are completely up to you
+#    branch: master
+#    commands:
+#      - docker sudo pip install awscli # update the aws cli
+#      - docker aws s3 cp /home/ubuntu/docker-ws/target/maven-archiver/pom.properties s3://span-cloud-coe-ilan/
+    
+
+
+#Please note, use it have set this $DOCKER_EMAIL and other variables in Environment screen already
+#Uncomment if you want to build and deploy to docker hub
 deployment:
   production: # just a label; label names are completely up to you
     branch: master
     commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push ilang/coe
+    
 
+#This was given by Docker doc, but unfortunately it dint work. Changed to above code to make it work.
 #deployment:
 #hub:
 #  branch: master
 #    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push ilang/coe
+#      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+#     - docker push ilang/coe
