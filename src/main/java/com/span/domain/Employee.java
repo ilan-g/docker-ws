@@ -17,6 +17,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    // test
     @Column(nullable = false)
     private String name;
     
