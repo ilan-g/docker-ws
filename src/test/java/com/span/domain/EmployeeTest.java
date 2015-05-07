@@ -26,5 +26,12 @@ public class EmployeeTest {
 		org.junit.Assert.assertEquals("failure - Age not equal", emp.getName(), NAME);
 	}
 	
+	@Test
+	public void testGetDesignation() {
+		Employee emp =  new Employee();
+		emp.setDesignation("SA");;;
+		org.junit.Assert.assertEquals("failure - Age not equal", emp.getDesignation(), "SA");
+	}
+	
 
 }
