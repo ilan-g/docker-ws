@@ -29,7 +29,12 @@ public class Employee {
     
     @Column(nullable = false)
     private String gender; 
+    
+    @Column(nullable = true)
+    private String designation; 
     	
+
+	
 
 	public Long getId() {
         return id;
@@ -69,6 +74,14 @@ public class Employee {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
 	}
 	
 	
