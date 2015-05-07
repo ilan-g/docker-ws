@@ -17,7 +17,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    // test-2341233
+    // id
     @Column(nullable = false)
     private String name;
     
@@ -29,9 +29,6 @@ public class Employee {
     
     @Column(nullable = false)
     private String gender; 
-    
-    @Column(nullable = true)
-    private String desgination;
     	
 
 	public Long getId() {
@@ -73,15 +70,6 @@ public class Employee {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
-	public String getDesgination() {
-		return desgination;
-	}
-
-	public void setDesgination(String desgination) {
-		this.desgination = desgination;
-	}
-	
 	
 	
 	

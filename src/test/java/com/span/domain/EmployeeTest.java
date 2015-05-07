@@ -24,7 +24,6 @@ public class EmployeeTest {
 		Employee emp =  new Employee();
 		emp.setName(NAME);;
 		org.junit.Assert.assertEquals("failure - Age not equal", emp.getName(), NAME);
-		// fail("Not yet implemented");
 	}
 	
 
