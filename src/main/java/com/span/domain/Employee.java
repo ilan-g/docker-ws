@@ -32,6 +32,9 @@ public class Employee {
     
     @Column(nullable = true)
     private String designation; 
+    
+    @Column(nullable = false)
+    private String managerName;
     	
 
 	
@@ -83,6 +86,15 @@ public class Employee {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
+
+	public String getManagerName() {
+		return managerName;
+	}
+
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
+	}
+	
 	
 	
 	
