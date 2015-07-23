@@ -43,7 +43,7 @@ public class EmployeeService {
      */
     public String getEmployeeList() {
         Iterator<Employee> names = employeeRepository.findAll().iterator();
-        logger.info("12345---getting inside employe list---123456");
+        logger.info("getting inside employe list");
         String name = DEFUALT_NAME;
         while(names.hasNext()){
             name = names.next().getName();

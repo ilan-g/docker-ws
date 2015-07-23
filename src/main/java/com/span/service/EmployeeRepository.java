@@ -9,7 +9,7 @@ import com.span.domain.Employee;
  * Date: 02/15/2015
  * this is one .. more comments...
  */
-@RepositoryRestResource(collectionResourceRel = "name", path = "name")
+@RepositoryRestResource(collectionResourceRel = "employees", path = "employees")
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {
 
 }
