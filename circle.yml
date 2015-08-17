@@ -3,6 +3,7 @@ machine:
     - docker
 
 #This is use to store the artifacts
+#comment
 general:  
   artifacts:
     - /home/ubuntu/docker-ws/target/
