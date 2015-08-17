@@ -10,12 +10,12 @@ $(document).ready(function() {
              var txt = "";
              if(length > 0){
                  for(var i=0;i<length;i++){
-                	 if(employeesData._embedded.employees[i].name && employeesData._embedded.employees[i].age && employeesData._embedded.employees[i].employeeNumber && employeesData._embedded.employees[i].gender  && employeesData._embedded.employees[i].managerName && employeesData._embedded.employees[i].designation){
+                	// if(employeesData._embedded.employees[i].name && employeesData._embedded.employees[i].age && employeesData._embedded.employees[i].employeeNumber && employeesData._embedded.employees[i].gender  && employeesData._embedded.employees[i].managerName && employeesData._embedded.employees[i].designation){
                         var empNumber = employeesData._embedded.employees[i]._links.self.href;                       
                          txt += "<tr id='rowId'><td>"+employeesData._embedded.employees[i].name+"</td><td>"+employeesData._embedded.employees[i].age+"</td><td>"+employeesData._embedded.employees[i].employeeNumber+"</td><td>"+employeesData._embedded.employees[i].gender+"</td><td>"+employeesData._embedded.employees[i].managerName+"</td><td>"+employeesData._embedded.employees[i].designation+"</td><td id='empCell'><input type='button' value='Delete'></input></td><td class='editEmp' id='editemp'><input type='submit' value='Edit'></input></td></tr>";
                 		 txt = txt.replace('empCell',empNumber);   
                 		 txt = txt.replace('rowId',empNumber);
-                       	 }
+                    //   	 }
                  }
                  if(txt != ""){
                      $("#tblData").append(txt);
