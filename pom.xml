@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.1.5.RELEASE</version>
+        <version>1.2.5.RELEASE</version>
     </parent>
 
     <artifactId>span-employee</artifactId>
@@ -12,8 +12,8 @@
     <description>Employee Services</description>
     <url></url>
     
-    <!-- Output to jar format -->
-	<packaging>jar</packaging>
+    <!-- Output to war format -->
+	<packaging>war</packaging>
 
     <properties>
         <main.basedir>${basedir}/../..</main.basedir>
@@ -27,6 +27,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -46,6 +50,18 @@
         <dependency>
 		    <groupId>junit</groupId>
 		    <artifactId>junit</artifactId>
+		</dependency>	
+		
+		<!-- Jsp Support -->
+		<dependency>
+    		<groupId>org.apache.tomcat.embed</groupId>
+    		<artifactId>tomcat-embed-jasper</artifactId>
+    		<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
     </dependencies>
