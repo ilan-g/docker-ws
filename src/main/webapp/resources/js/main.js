@@ -34,7 +34,7 @@ $(document).ready(function() {
 			 	  dataType: 'json', 
 			 	  type: 'post', 
 			 	  contentType: 'application/json', 
-			 	  data: JSON.stringify( { "name": $('.a1').val(), "age": $('.a2').val(), "employeeNumber": $('.a3').val(), "gender": $('.a4').val(), "managerName": $('.a5').val(), "designation": $('.a6').val() } ),
+			 	  data: JSON.stringify( { "name": $('.EmpName').val(), "age": $('.EmpAge').val(), "employeeNumber": $('.EmpNo').val(), "gender": $('.EmpGender:checked').val(), "managerName": $('.EmpManager').val(), "designation": $('.EmpDesgntn').val() } ),
 			 	  processData: false, 
 			 	  success: function( data, textStatus, jQxhr ){   }, 
 			 	  error: function( jqXhr, textStatus, errorThrown ){  } });
@@ -80,41 +80,75 @@ $(document).ready(function() {
 	 $('#age').val(cell2);
 	 $('#editEmpNumber').val(cell3);
 	 $('#editEmpGender').val(cell4);
-	 $('#editDesignation').val(cell5);
-	 $('#editManager').val(cell6);
+	 $('#editManager').val(cell5);
+	 $('#editDesignation').val(cell6);
 	 $('.editEmployee').show();
+	 $.ajax({
+		    url: delid,
+		    type: 'DELETE',
+		    success: function(result) {
+		     
+		    }
+		});
+ });//.on
 	 $('#updateEmp').click(function() {
 	 var tid = $('.editEmp').closest('td').attr('id');
 		  $.ajax({ url: 'http://localhost:8082/employees', 
 	 	  dataType: 'json', 
 	 	  type: 'post', 
 	 	  contentType: 'application/json', 
-	 	  data: JSON.stringify( { "name": $('#editEmpName').val(), "age": $('#age').val(), "employeeNumber": $('#editEmpNumber').val(), "gender": $('#editEmpGender').val(), "managerName": $('#editDesignation').val(), "designation": $('#editManager').val() } ),
+	 	  data: JSON.stringify( { "name": $('#editEmpName').val(), "age": $('#age').val(), "employeeNumber": $('#editEmpNumber').val(), "gender": $('#editEmpGender').val(), "managerName": $('#editManager').val(), "designation": $('#editDesignation').val() } ),
 	 	  processData: false, 
 	 	  success: function( data, textStatus, jQxhr ){   }, 
 	 	  error: function( jqXhr, textStatus, errorThrown ){  } });
 		  location.reload(true);
-		  $.ajax({
-	    url: delid,
-	    type: 'DELETE',
-	    success: function(result) {
-	     
-	    }
-	});
+		 
 //$(this).closest('tr').remove();
 location.reload(true);
  });
- });//.on
+
  
- $('.a3,.a2').keyup(function() {
+ 
+ //Validation for Digits
+ $('.EmpNo,.EmpAge').keyup(function() {
 	    $('span.error-keyup-1').hide();
 	    var inputVal = $(this).val();
 	    var numericReg = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
 	    if(!numericReg.test(inputVal)) {
-	        $(this).after('<div class="error error-keyup-1">Numeric characters only.</div>');
+	        $(this).after('<span class="error error-keyup-1">Numeric characters only.</span>');
+	    }
+	});
+ $('.EmpAge').keyup(function() {
+	    $('span.error-two-digit').hide();
+	    var inputValTwodigit = $(this).val();
+	    var twodigitreg = /^[0-9]{2}$/;
+	    if(!twodigitreg.test(inputValTwodigit)) {
+	        $(this).after('<span class="error error-keyup-1">Please Enter Valid Age.</span>');
 	    }
 	});
  
+ //Validation for not null
+ $('.EmpName,.EmpAge,.EmpNo,.EmpGender,.EmpManager').blur(function()          
+		 {        
+	 		$('span.err').hide();
+		     if( !$(this).val() ) {                      //if it is blank. 
+		    	 $(this).after('<span class="err">Can not be Empty.</span>');  
+		     }
+		 });
+ 
+ 
+	 $('#registerEmp').prop('disabled', true);
+	 $('.EmpName.EmpAge.EmpNo.EmpGender.EmpManager,.EmpDesgntn').keyup(function() {
+	    if($(this).val() != '') {
+	       $('#registerEmp').prop('disabled', false);
+	    }
+	 });
+	 $('#updateEmp').prop('disabled', true);
+	 $('.EmpName,.EmpAge,.EmpNo,.EmpManager,.EmpDesgntn').mouseup(function() {
+	    if($(this).val() != '') {
+	       $('#updateEmp').prop('disabled', false);
+	    }
+	 });
  
  });//.ready
 

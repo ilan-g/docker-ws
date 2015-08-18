@@ -33,27 +33,29 @@
 <table  id="vinform" >
 <tr>
     <td><b>Employee Name</b></td>
-    <td><input type="text" class="a1"></td>
+    <td><input type="text" class="EmpName"></td>
 </tr>
 <tr>
     <td><b>Employee age</b></td>
-    <td><input type="text" class="a2"></td>
+    <td><input type="text" class="EmpAge"></td>
 </tr>
 <tr>
     <td><b>Employee Number</b></td>
-    <td><b><input type="text" class="a3"></b></td>
+    <td><b><input type="text" class="EmpNo"></b></td>
 </tr>
 <tr>
     <td><b>Gender</b></td>
-    <td><b><input type="text" class="a4"></b></td>
+    <td><input type="radio" name="sex" value="Male" class="EmpGender">Male
+		<input type="radio" name="sex" value="Female" class="EmpGender">Female
+	</td>
 </tr>
 <tr>
     <td><b>Manager</b></td>
-    <td><b><input type="text" class="a5"></b></td>
+    <td><b><input type="text" class="EmpManager"></b></td>
 </tr>
 <tr>
     <td><b>Designation</b></td>
-    <td><b><input type="text" class="a6"></b></td>
+    <td><b><input type="text" class="EmpDesgntn"></b></td>
 </tr>
 </table>
 <button id="registerEmp">Add Employee</button>
@@ -64,27 +66,27 @@
 <table>
 <tr>
     <td><b>Employee Name</b></td>
-    <td><input type="text" id='editEmpName' class="a1"></td>
+    <td><input type="text" id='editEmpName' class="EmpName"></td>
 </tr>
 <tr>
     <td><b>Employee age</b></td>
-    <td ><input type="text" id='age' class="a2"></td>
+    <td ><input type="text" id='age' class="EmpAge"></td>
 </tr>
 <tr>
     <td><b>Employee Number</b></td>
-    <td ><b><input type="text" id='editEmpNumber' class="a3"></b></td>
+    <td ><b><input type="text" id='editEmpNumber' class="EmpNo"></b></td>
 </tr>
 <tr>
     <td><b>Gender</b></td>
-    <td ><b><input type="text" id='editEmpGender' class="a4"></b></td>
+    <td ><b><input type="text" id='editEmpGender' class="EmpGender"></b></td>
 </tr>
 <tr>
     <td><b>Manager</b></td>
-    <td ><b><input type="text" id='editDesignation' class="a5"></b></td>
+    <td ><b><input type="text"  id='editManager' class="EmpManager"></b></td>
 </tr>
 <tr>
     <td><b>Designation</b></td>
-    <td ><b><input type="text" id='editManager' class="a6"></b></td>
+    <td ><b><input type="text"  id='editDesignation' class="EmpDesgntn"></b></td>
 </tr>
 </table>
 <button id="updateEmp">Update</button>
