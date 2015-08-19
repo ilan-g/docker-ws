@@ -49,12 +49,5 @@ public class EmployeeController {
     mav.setViewName("Employee");
     return mav;
     }
-   
-    @RequestMapping(value = "/addemployee", method = RequestMethod.GET)
-    public ModelAndView addemployee() {
-    ModelAndView mav = new ModelAndView();
-    mav.setViewName("addemployee");
-    return mav;
-    }
 
 }

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	//Get all employees		 
 	 jQuery.ajax({
-         url: "http://localhost:8082/employees",
+         url: "../employees",
          type: "GET",
          contentType: 'application/json; charset=utf-8',
          success: function(resultData) {
@@ -11,8 +11,8 @@ $(document).ready(function() {
              if(length > 0){
                  for(var i=0;i<length;i++){
                 	// if(employeesData._embedded.employees[i].name && employeesData._embedded.employees[i].age && employeesData._embedded.employees[i].employeeNumber && employeesData._embedded.employees[i].gender  && employeesData._embedded.employees[i].managerName && employeesData._embedded.employees[i].designation){
-                        var empNumber = employeesData._embedded.employees[i]._links.self.href;                       
-                         txt += "<tr id='rowId'><td>"+employeesData._embedded.employees[i].name+"</td><td>"+employeesData._embedded.employees[i].age+"</td><td>"+employeesData._embedded.employees[i].employeeNumber+"</td><td>"+employeesData._embedded.employees[i].gender+"</td><td>"+employeesData._embedded.employees[i].managerName+"</td><td>"+employeesData._embedded.employees[i].designation+"</td><td id='empCell'><input type='button' value='Delete'></input></td><td class='editEmp' id='editemp'><input type='submit' value='Edit'></input></td></tr>";
+                        var empNumber = employeesData._embedded.employees[i]._links.self.href;    
+                         txt += "<tr id='rowId'><td id='NameId'>"+employeesData._embedded.employees[i].name+"</td><td id='AgeId"+i+"'>"+employeesData._embedded.employees[i].age+"</td><td id='NumberId"+i+"'>"+employeesData._embedded.employees[i].employeeNumber+"</td><td id='GenderId"+i+"'>"+employeesData._embedded.employees[i].gender+"</td><td id='ManagerId"+i+"'>"+employeesData._embedded.employees[i].managerName+"</td><td id='DesignationId"+i+"'>"+employeesData._embedded.employees[i].designation+"</td><td id='empCell'><input type='button' value='Delete'></input></td><td class='editEmp' id='editemp'><input type='submit' value='Edit'></input></td></tr>";
                 		 txt = txt.replace('empCell',empNumber);   
                 		 txt = txt.replace('rowId',empNumber);
                     //   	 }
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 	 //display json content post
 	  $("#registerEmp").click(function(){
-		 $.ajax({ url: 'http://localhost:8082/employees', 
+		 $.ajax({ url: '../employees', 
 			 	  dataType: 'json', 
 			 	  type: 'post', 
 			 	  contentType: 'application/json', 
@@ -93,7 +93,7 @@ $(document).ready(function() {
  });//.on
 	 $('#updateEmp').click(function() {
 	 var tid = $('.editEmp').closest('td').attr('id');
-		  $.ajax({ url: 'http://localhost:8082/employees', 
+		  $.ajax({ url: '../employees', 
 	 	  dataType: 'json', 
 	 	  type: 'post', 
 	 	  contentType: 'application/json', 
