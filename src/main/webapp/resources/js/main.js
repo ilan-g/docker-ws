@@ -46,19 +46,25 @@ $(document).ready(function() {
 	 
 	 //delete
 	 $('table').on('click', 'input[type="button"]', function(e){
-		 	var tdid = $(this).closest('td').attr('id');
-		 	// table row td id & delete url value
-		 	$.ajax({
-		 	    url: tdid,
-		 	    type: 'DELETE',
-		 	    success: function(result) {
-		 	     
-		 	    }
-		 	});
-		   $(this).closest('tr').remove();
-		   location.reload(true);
+		 var tdid = $(this).closest('td').attr('id');
+		$('.Notify').show();
+		$("#DeleteYes").click(function(){
+			$('.Notify').hide(); 	
+				 	// table row td id & delete url value
+				 	$.ajax({
+				 	    url: tdid,
+				 	    type: 'DELETE',
+				 	    success: function(result) {
+				 	     
+				 	    }
+				 	});
+				location.reload(true);
+				});
 		});
-	 
+	 $("#DeleteNo").click(function(){
+		 $('.Notify').hide();
+		 location.reload(true);
+	 });
 	  
 	 // Add Employee
 	 $('#btnadd').click(function() {
@@ -110,12 +116,12 @@ location.reload(true);
 
  
  
- //Validation for Digits
+ //Validation for Digit
  $('.EmpNo,.EmpAge').keyup(function() {
 	    $('span.error-keyup-1').hide();
 	    var inputVal = $(this).val();
-	    var numericReg = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
-	    if(!numericReg.test(inputVal)) {
+	    var numericRegErr = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
+	    if(!numericRegErr.test(inputVal)) {
 	        $(this).after('<span class="error error-keyup-1">&#9888; Numeric characters only.</span>');
 	    }
 	});
@@ -136,20 +142,45 @@ location.reload(true);
 		    	 $(this).after('<span class="err">&#9888; Can not be Empty.</span>');  
 		     }
 		 });
- 
- 
-	 $('#registerEmp').prop('disabled', true);
-	 $('.EmpName.EmpAge.EmpNo.EmpGender.EmpManager,.EmpDesgntn').keyup(function() {
-	    if($(this).val() != '') {
-	       $('#registerEmp').prop('disabled', false);
-	    }
+	 
+ 	//Validation While Adding new Employee
+	 $("#registerEmp").attr('disabled', 'disabled');
+	 $("#vinform").keyup(function() {
+		 $("#registerEmp").attr('disabled', 'disabled');
+		 var CheckName = $(".EmpName").val();
+		 var CheckAge = $(".EmpAge").val();
+		 var CheckEno = $(".EmpNo").val();
+		 var CheckGender = $(".EmpGender:checked").val();
+		 var CheckManager = $(".EmpManager").val();
+		 var CheckDsgntn = $(".EmpDesgntn").val();
+		 var numericRegDsbl = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
+		 if (!(CheckName == "" || CheckAge == "" || CheckEno == ""|| CheckGender == "" || CheckManager == ""|| CheckDsgntn == "" )) {
+			 if ((numericRegDsbl.test(CheckAge))&&(numericRegDsbl.test(CheckEno))) {
+				 $("#registerEmp").removeAttr('disabled');
+			 }
+		 }
 	 });
-	 $('#updateEmp').prop('disabled', true);
-	 $('.EmpName,.EmpAge,.EmpNo,.EmpManager,.EmpDesgntn').mouseup(function() {
-	    if($(this).val() != '') {
-	       $('#updateEmp').prop('disabled', false);
-	    }
+	 
+	 
+	//Validation While Editing Employee
+	 $("#updateEmp").attr('disabled', 'disabled');
+	 $("#EditTable").mouseup(function() {
+		 $("#updateEmp").attr('disabled', 'disabled');
+		var CheckEditedName= $('#editEmpName').val();
+		var CheckEditedAge = $('#age').val();
+		var CheckEditedEno = $('#editEmpNumber').val();
+		var CheckEditedGender = $('.editEmpGender:checked').val();
+		var CheckEditedManager = $('#editManager').val();
+		var CheckEditedDsgntn = $('#editDesignation').val();
+		var numericRegEdit = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
+		if (!(CheckEditedName == "" || CheckEditedAge == "" || CheckEditedEno == ""|| CheckEditedGender == "" || CheckEditedManager == ""|| CheckEditedDsgntn == "" )) {
+			 if ((numericRegEdit.test(CheckEditedAge))&&(numericRegEdit.test(CheckEditedEno))) {
+				 $("#updateEmp").removeAttr('disabled');
+			 }
+		}
 	 });
+	 
+	 
  
  });//.ready
 

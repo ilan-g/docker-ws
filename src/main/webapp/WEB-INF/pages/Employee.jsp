@@ -34,6 +34,14 @@
 					</table>
 					<button id="btnadd">&#9769; Add New Employee</button>
 				</div>
+				
+	<!-- Alert box -->
+				<div class="Notify" style="display:none" >
+					<p id="DeleteHeader">Delete Entry?</p>
+					<p>Are you sure you want to delete this entry?</p>
+					<input type="button" value="No" id="DeleteNo">
+					<input type="button" value="Yes" id="DeleteYes">
+				</div>
 	
 	<!-- Register new employee -->
 				<div id="registerEmployee" style="display:none" >
@@ -72,7 +80,7 @@
 	<!-- Edit Employee -->
 				<div class="editEmployee" style="display:none" >
 				<p class="TableHeader">Edit Employee</p>
-					<table>
+					<table id="EditTable">
 						<tr>
 						    <td><b>Employee Name</b></td>
 						    <td><input type="text" id='editEmpName' class="EmpName"></td>
