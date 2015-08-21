@@ -38,9 +38,9 @@
 	<!-- Alert box -->
 				<div class="Notify" style="display:none" >
 					<p id="DeleteHeader">Delete Entry?</p>
-					<p>Are you sure you want to delete this entry?</p>
-					<input type="button" value="No" id="DeleteNo">
+					<p>Are you sure you want to delete this entry?</p>					
 					<input type="button" value="Yes" id="DeleteYes">
+					<input type="button" value="No" id="DeleteNo">
 				</div>
 	
 	<!-- Register new employee -->
