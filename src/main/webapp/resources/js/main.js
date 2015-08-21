@@ -152,9 +152,8 @@ location.reload(true);
 		 var CheckEno = $(".EmpNo").val();
 		 var CheckGender = $(".EmpGender:checked").val();
 		 var CheckManager = $(".EmpManager").val();
-		 var CheckDsgntn = $(".EmpDesgntn").val();
 		 var numericRegDsbl = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
-		 if (!(CheckName == "" || CheckAge == "" || CheckEno == ""|| CheckGender == "" || CheckManager == ""|| CheckDsgntn == "" )) {
+		 if (!(CheckName == "" || CheckAge == "" || CheckEno == ""|| CheckGender == "" || CheckManager == "" )) {
 			 if ((numericRegDsbl.test(CheckAge))&&(numericRegDsbl.test(CheckEno))) {
 				 $("#registerEmp").removeAttr('disabled');
 			 }
@@ -164,22 +163,39 @@ location.reload(true);
 	 
 	//Validation While Editing Employee
 	 $("#updateEmp").attr('disabled', 'disabled');
-	 $("#EditTable").mouseup(function() {
+	 $("#EditTable").keyup(function() {
 		 $("#updateEmp").attr('disabled', 'disabled');
 		var CheckEditedName= $('#editEmpName').val();
 		var CheckEditedAge = $('#age').val();
 		var CheckEditedEno = $('#editEmpNumber').val();
 		var CheckEditedGender = $('.editEmpGender:checked').val();
 		var CheckEditedManager = $('#editManager').val();
-		var CheckEditedDsgntn = $('#editDesignation').val();
+		//var CheckEditedDsgntn = $('#editDesignation').val();
 		var numericRegEdit = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
-		if (!(CheckEditedName == "" || CheckEditedAge == "" || CheckEditedEno == ""|| CheckEditedGender == "" || CheckEditedManager == ""|| CheckEditedDsgntn == "" )) {
+		if (!(CheckEditedName == "" || CheckEditedAge == "" || CheckEditedEno == ""|| CheckEditedGender == "" || CheckEditedManager == "")) {
 			 if ((numericRegEdit.test(CheckEditedAge))&&(numericRegEdit.test(CheckEditedEno))) {
 				 $("#updateEmp").removeAttr('disabled');
 			 }
 		}
 	 });
 	 
+	 window.onresize=load;
+	 window.onload=load;
+
+	 function load()
+	 {
+	 var h=window.innerHeight;
+
+	 var e1=document.querySelector(".header");
+	 var e2=e1.offsetHeight;
+
+	 var f1=document.querySelector(".Footer");
+	 var f2=f1.offsetHeight;
+
+	 var q=document.querySelector(".Container");
+	 q.style.height=h-(e2+f2);
+
+	 }
 	 
  
  });//.ready
