@@ -1,0 +1,88 @@
+@CHARSET "ISO-8859-1";
+body {
+	font-family: calibri;
+	font-size: 100%;
+     }
+    
+.wrpr
+	{
+		//background:#F4F4F5;
+		border:0;
+		margin:0px auto;
+		width:100%;
+		position: relative;
+	}
+	
+.header {
+    background: #fff none repeat scroll 0 0;
+     border-bottom: 1px solid #ebccd1;
+     height:auto;
+}
+
+.Container{
+	background:#F4F4F5;
+	padding:10px;
+	height:700px;
+	overflow-y:scroll;
+	position: relative;
+}
+#Logo {
+   
+    height: 45px;
+    margin-left: 10px;
+    width: 127px;
+}
+#btnadd{
+	margin:	10px;
+	padding:3px;
+	background: #148E76;
+	color: white;
+}
+
+#rowId{
+	width:100%;
+}
+
+#vinform input{
+	border-radius:6px;
+}
+
+#tblData {
+    background: white none repeat scroll 0 0;
+}
+
+.TableHeader{
+   color: #3f4259;
+    display: table-cell;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    vertical-align: middle;
+}
+
+.Footer{
+	background-color: #e0e0e0;
+   	height:auto;
+    color: grey;
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+}
+
+.Button,#DeleteNo,#DeleteYes{
+	background: #148E76;
+	color: white;
+}
+
+.Notify{
+	border: 1px solid black;
+    left: 500px;
+    position: absolute;
+    top: 100px;
+    Padding:10px;
+    background: #E0E0E0;
+}
+
+#DeleteHeader{
+	border-bottom:1px solid black;
+	font-weight: bold;
+}
