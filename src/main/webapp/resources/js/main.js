@@ -107,8 +107,8 @@ $(document).ready(function() {
 	 	  contentType: 'application/json', 
 	 	  data: JSON.stringify( { "name": $('#editEmpName').val(), "age": $('#age').val(), "employeeNumber": $('#editEmpNumber').val(), "gender": $('.editEmpGender:checked').val(), "managerName": $('#editManager').val(), "designation": $('#editDesignation').val() } ),
 	 	  processData: false, 
-	 	  success: function( data, textStatus, jQxhr ){  alert("hi"); }, 
-	 	  error: function( jqXhr, textStatus, errorThrown ){ alert("error"); } });
+	 	  success: function( data, textStatus, jQxhr ){   }, 
+	 	  error: function( jqXhr, textStatus, errorThrown ){  } });
 		  location.reload(true);
 		 
 //$(this).closest('tr').remove();
