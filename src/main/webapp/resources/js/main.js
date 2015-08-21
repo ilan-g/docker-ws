@@ -45,8 +45,8 @@ $(document).ready(function() {
 	 
 	 
 	 //delete
-	 $('table').on('click', 'input[type="button"]', function(e){
-		 var tdid = $(this).closest('td').attr('id');
+	 $('table').on('click', 'input[type="button"]', function(){
+		var tdid = $(this).closest('td').attr('id');
 		$('.Notify').show();
 		$("#DeleteYes").click(function(){
 			$('.Notify').hide(); 	
@@ -73,7 +73,8 @@ $(document).ready(function() {
 		});
 	 
 	 //Edit employee
- $("#tblData").on("click", "td.editEmp", function(){	 
+ $("#tblData").on("click", "td.editEmp", function(event){	
+	 event.preventDefault();
 	 var delid=$(this).closest('tr').attr('id');
 	 var cell1 = $(this).closest('tr').children('td:eq(0)').text(); 
 	 var cell2 = $(this).closest('tr').children('td:eq(1)').text(); 
@@ -98,7 +99,8 @@ $(document).ready(function() {
 		    }
 		});
  });//.on
-	 $('#updateEmp').click(function() {
+	 $('#updateEmp').click(function(event) {
+		 event.preventDefault();
 	 var tid = $('.editEmp').closest('td').attr('id');
 		  $.ajax({
 		  url: '../employees', 
@@ -107,7 +109,7 @@ $(document).ready(function() {
 	 	  contentType: 'application/json', 
 	 	  data: JSON.stringify( { "name": $('#editEmpName').val(), "age": $('#age').val(), "employeeNumber": $('#editEmpNumber').val(), "gender": $('.editEmpGender:checked').val(), "managerName": $('#editManager').val(), "designation": $('#editDesignation').val() } ),
 	 	  processData: false, 
-	 	  success: function( data, textStatus, jQxhr ){   }, 
+	 	  success: function( data, textStatus, jQxhr ){  }, 
 	 	  error: function( jqXhr, textStatus, errorThrown ){  } });
 		  location.reload(true);
 		 
@@ -164,7 +166,7 @@ location.reload(true);
 	 
 	//Validation While Editing Employee
 	 $("#updateEmp").attr('disabled', 'disabled');
-	 $("#EditTable").keyup(function() {
+	 $("#EditTable").on('change mousedown keyup',function() {
 		 $("#updateEmp").attr('disabled', 'disabled');
 		var CheckEditedName= $('#editEmpName').val();
 		var CheckEditedAge = $('#age').val();
@@ -178,7 +180,7 @@ location.reload(true);
 				 $("#updateEmp").removeAttr('disabled');
 			 }
 		}
-	 });
+	});
 	 
 	 window.onresize=load;
 	 window.onload=load;
