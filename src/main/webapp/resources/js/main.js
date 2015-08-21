@@ -100,14 +100,15 @@ $(document).ready(function() {
  });//.on
 	 $('#updateEmp').click(function() {
 	 var tid = $('.editEmp').closest('td').attr('id');
-		  $.ajax({ url: '../employees', 
+		  $.ajax({
+		  url: '../employees', 
 	 	  dataType: 'json', 
 	 	  type: 'post', 
 	 	  contentType: 'application/json', 
 	 	  data: JSON.stringify( { "name": $('#editEmpName').val(), "age": $('#age').val(), "employeeNumber": $('#editEmpNumber').val(), "gender": $('.editEmpGender:checked').val(), "managerName": $('#editManager').val(), "designation": $('#editDesignation').val() } ),
 	 	  processData: false, 
-	 	  success: function( data, textStatus, jQxhr ){   }, 
-	 	  error: function( jqXhr, textStatus, errorThrown ){  } });
+	 	  success: function( data, textStatus, jQxhr ){  alert("hi"); }, 
+	 	  error: function( jqXhr, textStatus, errorThrown ){ alert("error"); } });
 		  location.reload(true);
 		 
 //$(this).closest('tr').remove();
@@ -181,20 +182,15 @@ location.reload(true);
 	 
 	 window.onresize=load;
 	 window.onload=load;
-
 	 function load()
 	 {
-	 var h=window.innerHeight;
-
-	 var e1=document.querySelector(".header");
-	 var e2=e1.offsetHeight;
-
-	 var f1=document.querySelector(".Footer");
-	 var f2=f1.offsetHeight;
-
-	 var q=document.querySelector(".Container");
-	 q.style.height=h-(e2+f2);
-
+		 var InnerHeight=window.innerHeight;
+		 var HeaderSecletor=document.querySelector(".header");
+		 var Headeroffsetheight=HeaderSecletor.offsetHeight;
+		 var FooterSecletor=document.querySelector(".Footer");
+	 	var Footeroffsetheight=FooterSecletor.offsetHeight;
+	 	var ContainerSelector=document.querySelector(".Container");
+	 	ContainerSelector.style.height=InnerHeight-(Headeroffsetheight+Footeroffsetheight);
 	 }
 	 
  
