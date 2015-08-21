@@ -23,14 +23,16 @@ $(document).ready(function() {
              }      	
                  },
          error : function(jqXHR, textStatus, errorThrown) {
-         },
-         timeout: 120000,
+         }
+         //timeout: 120000,
      });
 	 
 
 	 //display json content post
-	  $("#registerEmp").click(function(){
-		 $.ajax({ url: '../employees', 
+	  $("#registerEmp").click(function(event){
+		 event.preventDefault();
+		 $.ajax({ url: '../employees',
+			 async: false , 
 			 	  dataType: 'json', 
 			 	  type: 'post', 
 			 	  contentType: 'application/json', 
@@ -104,6 +106,7 @@ $(document).ready(function() {
 	 var tid = $('.editEmp').closest('td').attr('id');
 		  $.ajax({
 		  url: '../employees', 
+		  async: false ,
 	 	  dataType: 'json', 
 	 	  type: 'post', 
 	 	  contentType: 'application/json', 
