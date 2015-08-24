@@ -46,6 +46,14 @@ $(document).ready(function() {
 			    });//.clic
 	 
 	 
+	 //Cancel button
+	  $(".cancelregisterEmp").click(function(event){
+		  location.reload(true);
+		  $('#employeeDiv').show();
+	 	  $('#registerEmployee').hide();
+	 });
+	 
+	 
 	 //delete
 	 $('table').on('click', 'input[type="button"]', function(){
 		var tdid = $(this).closest('td').attr('id');
@@ -93,16 +101,8 @@ $(document).ready(function() {
 	 $('.editEmployee').show();
 	 if(cell4=="Female"){$('.female').prop('checked', true);}
 	 else{$('.male').prop('checked', true);}
-	 $.ajax({
-		    url: delid,
-		    type: 'DELETE',
-		    success: function(result) {
-		     
-		    }
-		});
- });//.on
 	 $('#updateEmp').click(function(event) {
-		 event.preventDefault();
+	 event.preventDefault();
 	 var tid = $('.editEmp').closest('td').attr('id');
 		  $.ajax({
 		  url: '../employees', 
@@ -114,11 +114,19 @@ $(document).ready(function() {
 	 	  processData: false, 
 	 	  success: function( data, textStatus, jQxhr ){  }, 
 	 	  error: function( jqXhr, textStatus, errorThrown ){  } });
+		  $.ajax({
+			    url: delid,
+			    type: 'DELETE',
+			    success: function(result) {
+			     
+			    }
+			});
 		  location.reload(true);
 		 
 //$(this).closest('tr').remove();
 location.reload(true);
  });
+ });//.on
 
  
  

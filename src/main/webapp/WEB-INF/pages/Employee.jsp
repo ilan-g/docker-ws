@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -32,15 +32,15 @@
 						    <th>Edit Employee</th>
 	    				</tr>
 					</table>
-					<button id="btnadd">&#9769; Add New Employee</button>
+					<button type="button" id="btnadd">&#9769; Add New Employee</button>
 				</div>
 				
 	<!-- Alert box -->
 				<div class="Notify" style="display:none" >
 					<p id="DeleteHeader">Delete Entry?</p>
-					<p>Are you sure you want to delete this entry?</p>					
-					<input type="button" value="Yes" id="DeleteYes">
+					<p>Are you sure you want to delete this entry?</p>
 					<input type="button" value="No" id="DeleteNo">
+					<input type="button" value="Yes" id="DeleteYes">
 				</div>
 	
 	<!-- Register new employee -->
@@ -74,7 +74,8 @@
 						    <td><b><input type="text" class="EmpDesgntn"></b></td>
 						</tr>
 					</table>
-					<button id="registerEmp">Add Employee</button>
+					<button type="button" id="registerEmp">Add Employee</button>
+					<button type="button" class="cancelregisterEmp">Cancel</button>
 				</div>
 	
 	<!-- Edit Employee -->
@@ -108,6 +109,7 @@
 						</tr>
 					</table>
 					<button id="updateEmp">Update</button>
+					<button type="button" class="cancelregisterEmp">Cancel</button>
 				</div>
 			</div><!-- container -->
 			<div class="Footer">
