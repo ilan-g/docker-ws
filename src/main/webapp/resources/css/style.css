@@ -2,6 +2,7 @@
 body {
 	font-family: calibri;
 	font-size: 100%;
+	 padding-bottom: 30px;
      }
     
 .wrpr
@@ -22,7 +23,7 @@ body {
 .Container{
 	background:#F4F4F5;
 	padding:10px;
-	height:700px;
+	height:800px;
 	overflow-y:scroll;
 	position: relative;
 }
@@ -43,8 +44,8 @@ body {
 	width:100%;
 }
 
-#vinform input{
-	border-radius:6px;
+#vinform input, #EditTable input{
+	border-radius:5px;
 }
 
 #tblData {
@@ -66,6 +67,10 @@ body {
     font-size: 15px;
     padding: 10px;
     width: 100%;
+    position: fixed;
+                bottom: 0;
+   
+                height: 30px;
 }
 
 .Button,#DeleteNo,#DeleteYes{
@@ -85,4 +90,11 @@ body {
 #DeleteHeader{
 	border-bottom:1px solid black;
 	font-weight: bold;
+}
+#tblData tr {
+    text-align: center;
+}
+th {
+    background: #148e76 none repeat scroll 0 0;
+    color: #fff;
 }
