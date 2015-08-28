@@ -25,5 +25,5 @@ RUN javac -version
 
 RUN pwd
 RUN ls -lrt
-CMD ["java","-Djava.security.egd=file:/dev/./urandom","-jar","target/span-employee-1.2.5.RELEASE.war"]
+# CMD ["java","-Djava.security.egd=file:/dev/./urandom","-jar","target/span-employee-1.2.5.RELEASE.war"]
 
