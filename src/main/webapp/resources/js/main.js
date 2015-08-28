@@ -137,7 +137,7 @@ location.reload(true);
  
  
  //Validation for Digit
- $('.EmpNo,.EmpAge').keyup(function() {
+ $('.EmpNo').keyup(function() {
 	    $('span.error-keyup-1').hide();
 	    var inputVal = $(this).val();
 	    var numericRegErr = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
@@ -145,12 +145,23 @@ location.reload(true);
 	        $(this).after('<span class="error error-keyup-1">&#9888; Numeric characters only.</span>');
 	    }
 	});
+
+ $('.EmpAge').keyup(function() {
+	 $('.ErrorAge').hide();
+	 var numericRegErrAge = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
+	 var inputValAge = $(this).val();
+	 if(!numericRegErrAge.test(inputValAge)) {
+		 $(this).after('<span class="ErrorAge">&#9888; Numeric charcters only!</span>');
+	 }
+ });
+	 
+	 
  $('.EmpAge').keyup(function() {
 	    $('span.error-two-digit').hide();
 	    var inputValTwodigit = $(this).val();
 	    var twodigitreg = /^[0-9]{2}$/;
 	    if(!twodigitreg.test(inputValTwodigit)) {
-	        $(this).after('<span class="error error-keyup-1">&#9888; Please Enter Valid Age.</span>');
+	        $(this).after('<span class="error-two-digit">&#9888; Please Enter Valid Age.</span>');
 	    }
 	});
  
