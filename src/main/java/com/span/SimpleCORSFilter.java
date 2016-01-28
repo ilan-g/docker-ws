@@ -1,3 +1,6 @@
+/**
+ * This is CORS filter added to allow Origin
+ */
 package com.span;
 
 import java.io.IOException;
