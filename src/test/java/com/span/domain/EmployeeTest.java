@@ -33,12 +33,12 @@ public class EmployeeTest {
 		org.junit.Assert.assertEquals("failure - Age not equal", emp.getDesignation(), "SA");
 	}
 	
-//	@Test
-//	public void testManager() {
-//		Employee emp =  new Employee();
-//		emp.setManagerName("SA");;;
-//		org.junit.Assert.assertEquals("failure - Age not equal", emp.getManagerName(), "SA");
-//	}
+	@Test
+	public void testManager() {
+		Employee emp =  new Employee();
+		emp.setManagerName("SA");;;
+		org.junit.Assert.assertEquals("failure - Age not equal", emp.getManagerName(), "SA");
+	}
 	
 	
 

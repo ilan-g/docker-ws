@@ -26,7 +26,7 @@
 						    <th>Age</th>
 						    <th>Employee Number</th>
 						    <th>Gender</th>
-						   <!-- <th>Manager Name</th> -->
+						   <th>Manager Name</th>
 						    <th>Designation</th>
 						    <th>Delete Employee</th>
 						    <th>Edit Employee</th>
@@ -65,10 +65,10 @@
 								<input type="radio" name="sex" value="Female" class="EmpGender">Female
 							</td>
 						</tr>
-						<!-- <tr>
+						<tr>
 						    <td><b>Manager</b></td>
 						    <td><b><input type="text" class="EmpManager"></b></td>
-						</tr> -->
+						</tr>
 						<tr>
 						    <td><b>Designation</b></td>
 						    <td><b><input type="text" class="EmpDesgntn"></b></td>
@@ -99,10 +99,10 @@
 						    <td ><input type="radio" name="sex" value="Male" class="male editEmpGender">Male
 								<input type="radio" name="sex" value="Female" class="female editEmpGender">Female</td>
 						</tr>
-						<!-- <tr>
+						<tr>
 						    <td><b>Manager</b></td>
 						    <td ><b><input type="text"  id='editManager' class="EmpManager"></b></td>
-						</tr> -->
+						</tr>
 						<tr>
 						    <td><b>Designation</b></td>
 						    <td ><b><input type="text"  id='editDesignation' class="EmpDesgntn"></b></td>
