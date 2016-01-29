@@ -13,7 +13,7 @@ $(document).ready(function() {
                 	// if(employeesData._embedded.employees[i].name && employeesData._embedded.employees[i].age && employeesData._embedded.employees[i].employeeNumber && employeesData._embedded.employees[i].gender  && employeesData._embedded.employees[i].managerName && employeesData._embedded.employees[i].designation){
                         var empNumber = employeesData._embedded.employees[i]._links.self.href;    
                          txt += "<tr id='rowId'><td id='NameId'>"+employeesData._embedded.employees[i].name+"</td><td id='AgeId"+i+"'>"+employeesData._embedded.employees[i].age+"</td><td id='NumberId"+i+"'>"+employeesData._embedded.employees[i].employeeNumber+"</td><td id='GenderId"+i+"'>"+employeesData._embedded.employees[i].gender+
-                         		"</td><td id='ManagerId"+i+"'>"+employeesData._embedded.employees[i].managerName+
+                         		//"</td><td id='ManagerId"+i+"'>"+employeesData._embedded.employees[i].managerName+
                          		"</td><td id='DesignationId"+i+"'>"+employeesData._embedded.employees[i].designation+"</td><td id='empCell'><input type='button' value='&#9874; Delete' class='Button'></input></td><td class='editEmp' id='editemp'><input type='submit' value='&#9776; Edit' class='Button'></input></td></tr>";
                 		 txt = txt.replace('empCell',empNumber);   
                 		 txt = txt.replace('rowId',empNumber);
@@ -39,7 +39,7 @@ $(document).ready(function() {
 			 	  type: 'post', 
 			 	  contentType: 'application/json', 
 			 	  data: JSON.stringify( { "name": $('.EmpName').val(), "age": $('.EmpAge').val(), "employeeNumber": $('.EmpNo').val(), "gender": $('.EmpGender:checked').val(),
-			 		                     "managerName": $('.EmpManager').val(), 
+			 		                     //"managerName": $('.EmpManager').val(), 
 			 		                    "designation": $('.EmpDesgntn').val() } ),
 			 	  processData: false, 
 			 	  success: function( data, textStatus, jQxhr ){   }, 
@@ -94,13 +94,13 @@ $(document).ready(function() {
 	 var cell2 = $(this).closest('tr').children('td:eq(1)').text(); 
 	 var cell3 = $(this).closest('tr').children('td:eq(2)').text(); 
 	 var cell4 = $(this).closest('tr').children('td:eq(3)').text();
-	 var cell5 = $(this).closest('tr').children('td:eq(4)').text(); 
+	 //var cell5 = $(this).closest('tr').children('td:eq(4)').text(); 
 	 var cell6 = $(this).closest('tr').children('td:eq(4)').text();
 	 $('#btnadd').hide();
 	 $('#editEmpName').val(cell1);
 	 $('#age').val(cell2);
 	 $('#editEmpNumber').val(cell3);
-	 $('#editManager').val(cell5);
+	 //$('#editManager').val(cell5);
 	 $('#editDesignation').val(cell6);
 	 $('.editEmployee').show();
 	 if(cell4=="Female"){$('.female').prop('checked', true);}
@@ -115,7 +115,7 @@ $(document).ready(function() {
 	 	  type: 'post', 
 	 	  contentType: 'application/json', 
 	 	  data: JSON.stringify( { "name": $('#editEmpName').val(), "age": $('#age').val(), "employeeNumber": $('#editEmpNumber').val(), "gender": $('.editEmpGender:checked').val(),
-	 		   "managerName": $('#editManager').val(),
+	 		   //"managerName": $('#editManager').val(),
 	 		   "designation": $('#editDesignation').val() } ),
 	 	  processData: false, 
 	 	  success: function( data, textStatus, jQxhr ){  }, 
