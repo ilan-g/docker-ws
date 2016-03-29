@@ -33,8 +33,8 @@ public class Employee {
     @Column(nullable = true)
     private String designation; 
     
-    @Column(nullable = true)
-    private String managerName;
+//    @Column(nullable = true)
+//    private String managerName;
     	
 
 	
@@ -87,13 +87,13 @@ public class Employee {
 		this.designation = designation;
 	}
 
-	public String getManagerName() {
-	return managerName;
-	}
-
-	public void setManagerName(String managerName) {
-		this.managerName = managerName;
-	}
+//	public String getManagerName() {
+//	return managerName;
+//	}
+//
+//	public void setManagerName(String managerName) {
+//		this.managerName = managerName;
+//	}
 	
 	
 	
