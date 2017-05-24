@@ -3,6 +3,7 @@ machine:
     - docker
 
 #This is use to store the artifacts
+# One more comment
 #comment
 general:  
   artifacts:
